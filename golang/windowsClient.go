@@ -9,14 +9,9 @@ import (
 
 type WindowsClient struct {
 	sync.Mutex
-	//cache sync.Map
 }
 
 func (c *WindowsClient) Query(command string) (result string, err error) {
-	//var cacheKey = fmt.Sprintf("WindowsClient:Query:%s", command)
-	//if _, ok := c.cache.LoadOrStore(cacheKey, 0); ok {
-	//	return
-	//}
 	c.Lock()
 	var pipeName = fmt.Sprintf(`\\.\pipe\%s`, DefaultPipeName)
 	var pipe *os.File
@@ -31,7 +26,6 @@ func (c *WindowsClient) Query(command string) (result string, err error) {
 			}
 		}
 	}
-	//c.cache.Delete(cacheKey)
 	c.Unlock()
 	return
 }
