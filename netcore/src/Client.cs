@@ -191,7 +191,6 @@ namespace vrhero.VirtualHere
                                     server.Connection.TransportId = ParseBytesString(server.Connection.TransportId);
                                     server.Connection.EasyFindId = ParseBytesString(server.Connection.EasyFindId);
                                     server.Connection.EasyFindPin = ParseBytesString(server.Connection.EasyFindPin);
-                                    //result.Server.Connection.ConnectedTime = new DateTimeOffset(result.Server.Connection.ConnectedTime, TimeSpan.FromHours(8)).LocalDateTime;
                                 }
                                 foreach (var device in server.Devices)
                                 {
